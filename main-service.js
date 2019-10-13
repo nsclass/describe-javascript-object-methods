@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const listMethods = require('./list-object-methods')
+const listObjectMethods = require('./list-object-methods')
 const express = require('express');
 const app = express();
 
@@ -23,7 +23,7 @@ const PORT_NUMBER = 3000
 app.get('/api/methods/:moduleName', (req,res) => {
     let moduleName = req.params.moduleName
     let val = require(`${moduleName}`)
-    let methods = listMethods.getMethods(val)
+    let methods = listObjectMethods.getMethods(val)
     res.send({
         moduleName: moduleName,
         methods: methods    
@@ -33,10 +33,10 @@ app.get('/api/methods/:moduleName', (req,res) => {
 app.get('/api/properties/:moduleName', (req,res) => {
     let moduleName = req.params.moduleName
     let val = require(`${moduleName}`)
-    let methods = listMethods.getProperties(val)
+    let properties = listObjectMethods.getProperties(val)
     res.send({
         moduleName: moduleName,
-        methods: methods    
+        properties: properties    
     })
 })
 
