@@ -1,4 +1,4 @@
-const listMethod = require('./list-object-methods.js')
+const listMethods = require('./list-object-methods')
 const express = require('express');
 const app = express();
 
@@ -8,7 +8,7 @@ app.get('/api/methods/:moduleName',function(req,res)
 {
     let moduleName = req.param('moduleName')
     let val = require(`${moduleName}`)
-    let methods = listMethod.getMethods(val)
+    let methods = listMethods.getMethods(val)
     res.send({
         moduleName: moduleName,
         methods: methods    
