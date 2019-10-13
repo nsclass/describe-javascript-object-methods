@@ -16,21 +16,23 @@ const getArgs = func => {
   return "no args"
 }
 
+const getMethods = obj => {
+  return Object.entries(obj)
+  .filter(([key, value]) => typeof obj[key] === 'function')
+  .map(([key, value]) => `${key}: ${getArgs(value)}`)
+  .sort((x, y) => {
+    let strX = x.toString()
+    let strY = y.toString()
+    return strX.localeCompare(strY)
+  })
+}
+
+const getProperties =  obj => {
+  return Object.getOwnPropertyNames(obj)
+  .filter(item => typeof obj[item] !== 'function')
+}
+
 module.exports = {
-
-  getMethods: obj => {
-    return Object.entries(obj)
-    .filter(([key, value]) => typeof obj[key] === 'function')
-    .map(([key, value]) => `${key}: ${getArgs(value)}`)
-    .sort((x, y) => {
-      let strX = x.toString()
-      let strY = y.toString()
-      return strX.localeCompare(strY)
-    })
-  },
-
-  getProperties: obj => {
-    return Object.getOwnPropertyNames(obj)
-    .filter(item => typeof obj[item] !== 'function')
-  }
+  getMethods: getMethods,
+  getProperties: getProperties
 }
