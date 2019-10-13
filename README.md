@@ -1,8 +1,10 @@
 # Describe node module methods
-List all methods name including arguments and properties in Node module
+List all methods name including arguments and properties in a Node module.
 
 ## API endpoint
-/api/methods/:moduleName
+
+- /api/methods/:moduleName
+- /api/properties/:moduleName
 
 ## Heroku curl command example for fs module
 ```curl https://list-module-methods.herokuapp.com/api/methods/fs```

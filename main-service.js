@@ -30,6 +30,16 @@ app.get('/api/methods/:moduleName', (req,res) => {
     })
 })
 
+app.get('/api/properties/:moduleName', (req,res) => {
+    let moduleName = req.params.moduleName
+    let val = require(`${moduleName}`)
+    let methods = listMethods.getProperties(val)
+    res.send({
+        moduleName: moduleName,
+        methods: methods    
+    })
+})
+
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = PORT_NUMBER;

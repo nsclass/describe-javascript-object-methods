@@ -46,6 +46,7 @@ const getMethods = obj => {
 const getProperties =  obj => {
   return Object.getOwnPropertyNames(obj)
   .filter(item => typeof obj[item] !== 'function')
+  .sort((x, y) => x.toString().localeCompare(y.toString()))
 }
 
 module.exports = {
