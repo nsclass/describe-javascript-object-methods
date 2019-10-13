@@ -1,0 +1,22 @@
+{
+  "name": "describe-javascript-object-methods",
+  "version": "1.0.0",
+  "description": "list all methods in javascript object",
+  "main": "main-service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nsclass/describe-javascript-object-methods.git"
+  },
+  "author": "Nam Seob Seo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nsclass/describe-javascript-object-methods/issues"
+  },
+  "homepage": "https://github.com/nsclass/describe-javascript-object-methods#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
