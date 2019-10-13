@@ -15,4 +15,8 @@ app.get('/api/methods/:moduleName',function(req,res)
     })
 })
 
-const server = app.listen(PORT_NUMBER, () => {})
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = PORT_NUMBER;
+}
+const server = app.listen(port, () => {})
