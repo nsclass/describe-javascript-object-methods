@@ -21,7 +21,7 @@ const app = express();
 const PORT_NUMBER = 3000
 
 app.get('/api/methods/:moduleName', (req,res) => {
-    let moduleName = req.param('moduleName')
+    let moduleName = req.params.moduleName
     let val = require(`${moduleName}`)
     let methods = listMethods.getMethods(val)
     res.send({
